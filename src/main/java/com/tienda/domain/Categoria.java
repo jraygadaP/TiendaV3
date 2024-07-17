@@ -21,7 +21,7 @@ public class Categoria implements Serializable{
     private String rutaImagen; 
     private boolean activo;   
     
-    @OneToMany
+   @OneToMany
     @JoinColumn(name="id_categoria", updatable=false)
     private List<Producto> productos;
 }

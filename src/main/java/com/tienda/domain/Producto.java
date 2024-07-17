@@ -24,14 +24,24 @@ public class Producto implements Serializable{
  
     private static final long serialVersionUID = 1l;
     
-    @Id  /// Agregar este tag hace que el ID Producto sea la llave principal de la misma forma que es la llave principal en la tabla de squl que se creo en MySQL
-    @GeneratedValue (strategy = GenerationType.IDENTITY) /// La estrategia para generar los valores de ID Producto van a ser identicos a los que se generan en la base de datos.
-    
-    @Column (name = "id_Producto")
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @Column(name="id_producto")
     private Long idProducto;
+    //private Long idCategoria; no se utiliza más por el @ManyToOne
+    private String descripcion; 
+    private String detalle; 
+    private double precio;
+    private int existencias;
+    private String rutaImagen; 
+    private boolean activo;  
     
-    private String descripcion;
-    private String rutaImagen;
-    private boolean activo;
+    @ManyToOne
+    @JoinColumn(name="id_categoria")
+    private Categoria categoria;
+    
+
+   
     
 }
+
