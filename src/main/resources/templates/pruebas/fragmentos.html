@@ -30,11 +30,11 @@
 
                 <div class = "card" th:each = "p : ${productos}">
                     <figure>
-                        
+
                         <img th:src="${p.rutaImagen}"
-                              height ="200"
-                              alt="alt"/>
-                        
+                             height ="200"
+                             alt="alt"/>
+
                         <figcaption>
                             ₡[[${p.precio}]] ([[${p.existencias}]])                            
                         </figcaption>
@@ -48,6 +48,142 @@
                     </div>
                 </div>
             </div> 
+        </section>
+
+
+        <!-- 1 Sección para crear las consultas especiales en productos-->
+        <section th:fragment="consultas" class="bg-light">
+            <div class = "row row-cols-3 m-2">
+
+                <div class = "card p-2">
+
+                    <form method=get"" th:action = "@{/pruebas/consulta1}">
+
+                        <div class ="card-header bg-primary text-center text-white">
+
+                            <h4>[[#{pruebas.ampliadas}]]</h4>
+                        </div>
+
+                        <div class ="card-body bg-warning">
+                            
+                            <div class="mb-3">
+                            <label for = "precioInf">[[#{pruebas.precio.inferior}]]</label>
+                        
+                            <input type ="number"
+                                   class ="form-control"
+                                   th:value ="${precioInf}"
+                                   th:name ="precioInf"
+                                   required="true"/>
+                            </div>
+                            
+                            <div class="mb-3">
+                            <label for = "precioSup">[[#{pruebas.precio.superior}]]</label>
+                        
+                            <input type ="number"
+                                   class ="form-control"
+                                   th:value ="${precioSup}"
+                                   th:name ="precioSup"
+                                   required="true"/>
+                            </div>
+                            
+                        </div>
+                        
+                        <div class="card-footer bg-Secondary text-center">
+                             
+                            <button type ="submut" class = "btn btn-success">
+                                <i class="fas fa-magnifying-glass"></i>[[#{pruebas.ampliadas}]]
+                            </button>
+                        </div>
+                    </form>
+                </div>
+
+                <div class = "card p-2">
+
+                    <form method=get"" th:action = "@{/pruebas/consulta2}">
+
+                        <div class ="card-header bg-primary text-center text-white">
+
+                            <h4>[[#{pruebas.jpql}]]</h4>
+                        </div>
+
+                        <div class ="card-body bg-warning">
+                            
+                            <div class="mb-3">
+                            <label for = "precioInf">[[#{pruebas.precio.inferior}]]</label>
+                        
+                            <input type ="number"
+                                   class ="form-control"
+                                   th:value ="${precioInf}"
+                                   th:name ="precioInf"
+                                   required="true"/>
+                            </div>
+                            
+                            <div class="mb-3">
+                            <label for = "precioSup">[[#{pruebas.precio.superior}]]</label>
+                        
+                            <input type ="number"
+                                   class ="form-control"
+                                   th:value ="${precioSup}"
+                                   th:name ="precioSup"
+                                   required="true"/>
+                            </div>
+                            
+                        </div>
+                        
+                        <div class="card-footer bg-Secondary text-center">
+                             
+                            <button type ="submut" class = "btn btn-success">
+                                <i class="fas fa-magnifying-glass"></i>[[#{pruebas.ampliadas}]]
+                            </button>
+                        </div>
+                    </form>
+                </div>
+                
+                <div class = "card p-2">
+
+                    <form method=get"" th:action = "@{/pruebas/consulta3}">
+
+                        <div class ="card-header bg-primary text-center text-white">
+
+                            <h4>[[#{pruebas.nativo}]]</h4>
+                        </div>
+
+                        <div class ="card-body bg-warning">
+                            
+                            <div class="mb-3">
+                            <label for = "precioInf">[[#{pruebas.precio.inferior}]]</label>
+                        
+                            <input type ="number"
+                                   class ="form-control"
+                                   th:value ="${precioInf}"
+                                   th:name ="precioInf"
+                                   required="true"/>
+                            </div>
+                            
+                            <div class="mb-3">
+                            <label for = "precioSup">[[#{pruebas.precio.superior}]]</label>
+                        
+                            <input type ="number"
+                                   class ="form-control"
+                                   th:value ="${precioSup}"
+                                   th:name ="precioSup"
+                                   required="true"/>
+                            </div>
+                            
+                        </div>
+                        
+                        <div class="card-footer bg-Secondary text-center">
+                             
+                            <button type ="submut" class = "btn btn-success">
+                                <i class="fas fa-magnifying-glass"></i>[[#{pruebas.ampliadas}]]
+                            </button>
+                        </div>
+                    </form>
+                </div>
+               
+                
+            </div>
+
         </section>
 
     </body>

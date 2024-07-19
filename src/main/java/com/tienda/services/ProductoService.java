@@ -14,4 +14,16 @@ public interface ProductoService {
     
     public void save(Producto producto);
     
+    // Se utiliza la consulta 1, consulta ampliada
+    
+    public List<Producto> consulta1 (double precioInf, double precioSup);
+    
+    // Se utiliza la consulta 2, consulta JPQL
+    
+    public List<Producto> consulta2 (double precioInf, double precioSup);
+    
+    // Se utiliza la consulta 3, consulta SQL
+    
+    public List<Producto> consulta3 (double precioInf, double precioSup);
+    
 }

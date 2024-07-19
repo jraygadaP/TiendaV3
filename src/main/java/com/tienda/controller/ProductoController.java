@@ -25,9 +25,9 @@ public class ProductoController {
 
     @GetMapping("/listado")
     public String listado(Model model) {
-        var productos = productoService.getProductos(false);
-        model.addAttribute("productos", productos);
-        model.addAttribute("totalproductos", productos.size());
+        var lista = productoService.getProductos(false);
+        model.addAttribute("productos", lista);
+        model.addAttribute("totalproductos", lista.size());
         
         var  categorias = categoriaService.getCategorias(false);
         model.addAttribute("categorias", categorias);
