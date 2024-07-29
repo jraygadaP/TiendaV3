@@ -19,12 +19,12 @@ public class Usuario implements Serializable{
     private Long idUsuario;
     private String username; 
     private String password; 
-    private String name;
+    private String nombre;
     private String apellidos;
     private String correo;
     private String telefono;
     private String rutaImagen;
-    private String activo; 
+    private boolean activo; 
    
     
    @OneToMany
