@@ -182,6 +182,48 @@
                 </div>
                
                 
+                <div class = "card p-2">
+
+                    <form method=get"" th:action = "@{/pruebas/consultaExistencias}">
+
+                        <div class ="card-header bg-primary text-center text-white">
+
+                            <h4>Consulta por Existencias</h4>
+                        </div>
+
+                        <div class ="card-body bg-warning">
+                            
+                            <div class="mb-3">
+                            <label for = "existenciaInf">Existencia inferior</label>
+                        
+                            <input type ="number"
+                                   class ="form-control"
+                                   th:value ="${existenciaInf}"
+                                   th:name ="existenciaInf"
+                                   required="true"/>
+                            </div>
+                            
+                            <div class="mb-3">
+                            <label for = "existenciaSup">Existencia superior</label>
+                        
+                            <input type ="number"
+                                   class ="form-control"
+                                   th:value ="${existenciaSup}"
+                                   th:name ="existenciaSup"
+                                   required="true"/>
+                            </div>
+                            
+                        </div>
+                        
+                        <div class="card-footer bg-Secondary text-center">
+                             
+                            <button type ="submut" class = "btn btn-success">
+                                <i class="fas fa-magnifying-glass"></i>[[#{pruebas.ampliadas}]]
+                            </button>
+                        </div>
+                    </form>
+                </div>
+                
             </div>
 
         </section>

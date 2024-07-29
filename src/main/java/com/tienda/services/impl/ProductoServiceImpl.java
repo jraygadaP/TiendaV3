@@ -1,4 +1,4 @@
-package com.tienda.services.impl;
+ package com.tienda.services.impl;
 
 import com.tienda.dao.ProductoDao;
 import com.tienda.domain.Producto;
@@ -62,5 +62,10 @@ public class ProductoServiceImpl
     @Transactional(readOnly=true)
     public List<Producto> consulta3(double precioInf, double precioSup) {
         return productoDao.consulta3(precioInf, precioSup);
+    }
+
+    @Override
+    public List<Producto> consultaExistencias(double precioInf, double precioSup) {
+        return productoDao.consultaExistencias(precioInf, precioSup);
     }
 }

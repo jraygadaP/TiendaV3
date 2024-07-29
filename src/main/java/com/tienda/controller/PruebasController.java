@@ -91,4 +91,19 @@ public class PruebasController {
         model.addAttribute("precioSup", precioSup);
         return "/pruebas/listado2";
     }
+    
+    
+        @GetMapping("/consultaExistencias")
+    public String consultaExistencias(
+            @RequestParam(value = "existenciaInf") double existenciaInf,
+            @RequestParam(value = "existenciaSup") double existenciaSup,
+            Model model) {
+
+        var productos = productoService.consultaExistencias(existenciaInf, existenciaSup);
+        model.addAttribute("productos", productos);
+        model.addAttribute("existenciaInf", existenciaInf);
+        model.addAttribute("existenciaSup", existenciaSup);
+        return "/pruebas/listado2";
+    }
+    
 }
