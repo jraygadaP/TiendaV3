@@ -30,15 +30,23 @@
 
                 <div class = "card" th:each = "p : ${productos}">
                     <figure>
-
-                        <img th:src="${p.rutaImagen}"
-                             height ="200"
-                             alt="alt"/>
-
-                        <figcaption>
-                            ₡[[${p.precio}]] ([[${p.existencias}]])                            
+                        <img th:src="${p.rutaImagen}" height="200"/>
+                        <figcaption class="d-flex justify-content-evenly">
+                            <div>
+                                ¢[[${p.precio}]] ([[${p.existencias}]])
+                            </div>
+                            <div>
+                                <form>
+                                    <input type="hidden" name="idProducto" th:value="${p.idProducto}"/>
+                                    <input type="hidden" name="exisencias" th:value="${p.existencias}"/>
+                                    <button class="btn btn-ligth" id="addCar" 
+                                            name="addCar" onclick="addCart(this.form)" 
+                                            type="button"><i class="fas fa-cart-plus"></i></button>
+                                </form>
+                            </div>
                         </figcaption>
                     </figure>
+                    
                     <div class ="card-header">
                         <h4>[[${p.descripcion}]]</h4>
                     </div>
@@ -65,31 +73,31 @@
                         </div>
 
                         <div class ="card-body bg-warning">
-                            
+
                             <div class="mb-3">
-                            <label for = "precioInf">[[#{pruebas.precio.inferior}]]</label>
-                        
-                            <input type ="number"
-                                   class ="form-control"
-                                   th:value ="${precioInf}"
-                                   th:name ="precioInf"
-                                   required="true"/>
+                                <label for = "precioInf">[[#{pruebas.precio.inferior}]]</label>
+
+                                <input type ="number"
+                                       class ="form-control"
+                                       th:value ="${precioInf}"
+                                       th:name ="precioInf"
+                                       required="true"/>
                             </div>
-                            
+
                             <div class="mb-3">
-                            <label for = "precioSup">[[#{pruebas.precio.superior}]]</label>
-                        
-                            <input type ="number"
-                                   class ="form-control"
-                                   th:value ="${precioSup}"
-                                   th:name ="precioSup"
-                                   required="true"/>
+                                <label for = "precioSup">[[#{pruebas.precio.superior}]]</label>
+
+                                <input type ="number"
+                                       class ="form-control"
+                                       th:value ="${precioSup}"
+                                       th:name ="precioSup"
+                                       required="true"/>
                             </div>
-                            
+
                         </div>
-                        
+
                         <div class="card-footer bg-Secondary text-center">
-                             
+
                             <button type ="submit" class = "btn btn-success">
                                 <i class="fas fa-magnifying-glass"></i>[[#{pruebas.ampliadas}]]
                             </button>
@@ -107,38 +115,38 @@
                         </div>
 
                         <div class ="card-body bg-warning">
-                            
+
                             <div class="mb-3">
-                            <label for = "precioInf">[[#{pruebas.precio.inferior}]]</label>
-                        
-                            <input type ="number"
-                                   class ="form-control"
-                                   th:value ="${precioInf}"
-                                   th:name ="precioInf"
-                                   required="true"/>
+                                <label for = "precioInf">[[#{pruebas.precio.inferior}]]</label>
+
+                                <input type ="number"
+                                       class ="form-control"
+                                       th:value ="${precioInf}"
+                                       th:name ="precioInf"
+                                       required="true"/>
                             </div>
-                            
+
                             <div class="mb-3">
-                            <label for = "precioSup">[[#{pruebas.precio.superior}]]</label>
-                        
-                            <input type ="number"
-                                   class ="form-control"
-                                   th:value ="${precioSup}"
-                                   th:name ="precioSup"
-                                   required="true"/>
+                                <label for = "precioSup">[[#{pruebas.precio.superior}]]</label>
+
+                                <input type ="number"
+                                       class ="form-control"
+                                       th:value ="${precioSup}"
+                                       th:name ="precioSup"
+                                       required="true"/>
                             </div>
-                            
+
                         </div>
-                        
+
                         <div class="card-footer bg-Secondary text-center">
-                             
+
                             <button type ="submit" class = "btn btn-success">
                                 <i class="fas fa-magnifying-glass"></i>[[#{pruebas.ampliadas}]]
                             </button>
                         </div>
                     </form>
                 </div>
-                
+
                 <div class = "card p-2">
 
                     <form method="get" th:action = "@{/pruebas/consulta3}">
@@ -149,39 +157,39 @@
                         </div>
 
                         <div class ="card-body bg-warning">
-                            
+
                             <div class="mb-3">
-                            <label for = "precioInf">[[#{pruebas.precio.inferior}]]</label>
-                        
-                            <input type ="number"
-                                   class ="form-control"
-                                   th:value ="${precioInf}"
-                                   th:name ="precioInf"
-                                   required="true"/>
+                                <label for = "precioInf">[[#{pruebas.precio.inferior}]]</label>
+
+                                <input type ="number"
+                                       class ="form-control"
+                                       th:value ="${precioInf}"
+                                       th:name ="precioInf"
+                                       required="true"/>
                             </div>
-                            
+
                             <div class="mb-3">
-                            <label for = "precioSup">[[#{pruebas.precio.superior}]]</label>
-                        
-                            <input type ="number"
-                                   class ="form-control"
-                                   th:value ="${precioSup}"
-                                   th:name ="precioSup"
-                                   required="true"/>
+                                <label for = "precioSup">[[#{pruebas.precio.superior}]]</label>
+
+                                <input type ="number"
+                                       class ="form-control"
+                                       th:value ="${precioSup}"
+                                       th:name ="precioSup"
+                                       required="true"/>
                             </div>
-                            
+
                         </div>
-                        
+
                         <div class="card-footer bg-Secondary text-center">
-                             
+
                             <button type ="submut" class = "btn btn-success">
                                 <i class="fas fa-magnifying-glass"></i>[[#{pruebas.ampliadas}]]
                             </button>
                         </div>
                     </form>
                 </div>
-               
-                
+
+
                 <div class = "card p-2">
 
                     <form method="get" th:action = "@{/pruebas/consultaExistencias}">
@@ -192,38 +200,38 @@
                         </div>
 
                         <div class ="card-body bg-warning">
-                            
+
                             <div class="mb-3">
-                            <label for = "existenciaInf">Existencia inferior</label>
-                        
-                            <input type ="number"
-                                   class ="form-control"
-                                   th:value ="${existenciaInf}"
-                                   th:name ="existenciaInf"
-                                   required="true"/>
+                                <label for = "existenciaInf">Existencia inferior</label>
+
+                                <input type ="number"
+                                       class ="form-control"
+                                       th:value ="${existenciaInf}"
+                                       th:name ="existenciaInf"
+                                       required="true"/>
                             </div>
-                            
+
                             <div class="mb-3">
-                            <label for = "existenciaSup">Existencia superior</label>
-                        
-                            <input type ="number"
-                                   class ="form-control"
-                                   th:value ="${existenciaSup}"
-                                   th:name ="existenciaSup"
-                                   required="true"/>
+                                <label for = "existenciaSup">Existencia superior</label>
+
+                                <input type ="number"
+                                       class ="form-control"
+                                       th:value ="${existenciaSup}"
+                                       th:name ="existenciaSup"
+                                       required="true"/>
                             </div>
-                            
+
                         </div>
-                        
+
                         <div class="card-footer bg-Secondary text-center">
-                             
+
                             <button type ="submit" class = "btn btn-success">
                                 <i class="fas fa-magnifying-glass"></i>[[#{pruebas.ampliadas}]]
                             </button>
                         </div>
                     </form>
                 </div>
-                
+
             </div>
 
         </section>
